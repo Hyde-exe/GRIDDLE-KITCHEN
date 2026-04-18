@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griddle Kitchen - Premium Dining Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- EmailJS For Email Sending -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "P-K_vRni76L-x3mr_",
+      });
+   })();
+</script>
+
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2>Griddle Kitchen</h2>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h2>🍳 Griddle Kitchen</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reservation">Reservation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Griddle Kitchen</h1>
+            <p>Experience Culinary Excellence in the Heart of Accra</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('reservation')">Reserve Now</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('menu')">View Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Griddle Kitchen</h2>
+                    <p>At Griddle Kitchen, we believe in serving exceptional food crafted with passion and premium ingredients. Our expert chefs create memorable dining experiences that celebrate flavors and quality.</p>
+                    <div class="location-info">
+                        <h3>📍 Location</h3>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.4564271434417!2d-0.17595292346819353!3d5.603833693706834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9a1b7b7b7b7b7%3A0x1234567890abcdef!2s10th%20Ave%2C%20Accra!5e0!3m2!1sen!2sgh!4v1702000000000\" width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="location-details">
+                            <p><strong>Griddle Kitchen</strong></p>
+                            <p>Opposite Obuoba Gardens</p>
+                            <p>10th Ave, Accra</p>
+                            <p class="phone">📞 +233 245 681 858</p>
+                            <p class="email">✉️ info@griddlekitchen.com</p>
+                            <a href="https://www.google.com/maps/search/Griddle+Kitchen+10th+Ave+Accra" target="_blank" rel="noopener noreferrer" class="btn btn-directions">📍 Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="hangout.jpeg" alt="Griddle Kitchen Restaurant">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-categories">
+                <button class="category-btn active" onclick="filterMenu('all')">All</button>
+                <button class="category-btn" onclick="filterMenu('appetizers')">Appetizers</button>
+                <button class="category-btn" onclick="filterMenu('mains')">Main Courses</button>
+                <button class="category-btn" onclick="filterMenu('sides')">Sides</button>
+                <button class="category-btn" onclick="filterMenu('desserts')">Desserts</button>
+            </div>
+            
+            <div class="menu-grid">
+                <!-- Appetizers -->
+                <div class="menu-item" data-category="appetizers">
+                    <img src="grilled yam.jpeg" alt="Butter Prawn sauce">
+                    <h3>Grilled Vegetables Platter</h3>
+                    <p> The colors of Yum....This Butter Prawn sauce is Dynamite... we are here to satisfy your inner cravings..</p>
+                    <span class="price">GHS 45.00</span>
+                </div>
+                <div class="menu-item" data-category="appetizers">
+                <img src="Bacon wrapper shrimps.jpeg" alt="Bacon wrapper shrimps">
+                    <h3>Bacon wrapper shrimps</h3>
+                    <p>This Bacon wrapper shrimps go beeeeeee ruff....</p>
+                    <span class="price">GHS 65.00</span>
+                </div>
+
+                <!-- Main Courses -->
+                <div class="menu-item" data-category="mains">
+                    <img src="Fried-rice .jpeg" alt="Fried-rice">
+                    <h3> Fried-rice </h3>
+                    <p>Fried-rice with beef kebab.:. But wait 9 Did you hear we are bringing single packs back in July ??? Well turn on your...</p>
+                    <span class="price">GHS 120.00</span>
+                </div>
+                <div class="menu-item" data-category="mains">
+                    <img src="Banku plus our Red and Green hot Pepper..jpeg" alt="Banku plus our Red and Green hot Pepper ">
+                    <h3>Banku plus our Red and Green hot Pepper</h3>
+                    <p>Happy Sunday!! Our Assorted Meat protein with Banku plus our Red and Green hot Pepper.
+Perfect for a Weekend hangout with family... </p>
+                    <span class="price">GHS 95.00</span>
+                </div>
+                <div class="menu-item" data-category="mains">
+                    <img src="Kokonte.jpeg" alt="Asanka of Kokonte with assorted meat ">
+                    <h3> Kokonte with assorted meat </h3>
+                    <p>An Asanka of Kokonte with assorted meat and fish for a guest at @gigie_ wedding lunch over the weekend...</p>
+                    <span class="price">GHS 85.00</span>
+                </div>
+
+                <!-- Sides -->
+                <div class="menu-item" data-category="sides">
+                    <img src="WhatsApp Image 2026-04-18 at 2.10.06 AM.jpeg" alt="Jollof Rice">
+                    <h3>Jollof</h3>
+                    <p>Three Protein power combo (beef kebabs, Tsofi,grilled Suya chicken) with Jollof and veggies....</p>
+                    <span class="price">GHS 20.00</span>
+                </div>
+                <div class="menu-item" data-category="sides">
+                    <img src="WhatsApp Image 2026-04-18 at 2.22.36 AM.jpeg" alt="Easter Box">
+                    <h3>Easter Box</h3>
+                    <p> Mini Easter treat box plus a few extra dishes. Have you ordered yours..</p>
+                    <span class="price">GHS 15.00</span>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-item" data-category="desserts">
+                    <img src="Local drinks .jpeg" alt="Local drinks">
+                    <h3>Local drinks </h3>
+                    <p>We provided assorted Local drinks to compliment the Food served...</p>
+                    <span class="price">GHS 30.00</span>
+                </div>
+                <div class="menu-item" data-category="desserts">
+                    <img src="dynamite....jpeg" alt=" Platinum ticket holders with some dynamite">
+                    <h3> Platinum ticket holders with some dynamite</h3>
+                    <p>we brought our A Game, we served the Artiste and the Platinum ticket holders with some dynamite...</p>
+                    <span class="price">GHS 35.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">18</span>
+                        <span class="month">APR</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Wine Tasting Night</h3>
+                        <p>Join us for an exclusive wine pairing dinner featuring international and local wines.</p>
+                        <p class="event-time">🕖 7:00 PM - 11:00 PM</p>
+                        <button class="btn btn-small" onclick="alert('Booking Wine Tasting - Coming Soon')">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">25</span>
+                        <span class="month">APR</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Live Cooking Masterclass</h3>
+                        <p>Learn grilling techniques from our head chef with hands-on cooking demonstrations.</p>
+                        <p class="event-time">🕖 6:00 PM - 9:00 PM</p>
+                        <button class="btn btn-small" onclick="alert('Booking Masterclass - Coming Soon')">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">02</span>
+                        <span class="month">MAY</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Family Grill BBQ Festival</h3>
+                        <p>Bring your family for a fun-filled day with unlimited grilled delights and live entertainment.</p>
+                        <p class="event-time">🕖 1:00 PM - 10:00 PM</p>
+                        <button class="btn btn-small" onclick="alert('Booking BBQ Festival - Coming Soon')">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">10</span>
+                        <span class="month">MAY</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Anniversary Celebration</h3>
+                        <p>Celebrate our 5th anniversary with special menu items and exclusive discounts all day.</p>
+                        <p class="event-time">🕖 10:00 AM - 11:00 PM</p>
+                        <button class="btn btn-small" onclick="alert('Booking Anniversary - Coming Soon')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Reviews & User Images) -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Moments from Our Guests</h2>
+            <p class="gallery-subtitle">See what our valued customers love about Griddle Kitchen</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Auntie Eugenia's Fabulous 50th birthday celebration... .jpeg" alt="User Review 1">
+                    <div class="gallery-overlay">
+                        <div class="review-text">
+                            <p>"Auntie Eugenia's Fabulous 50th birthday celebration... ."</p>
+                            <p class="reviewer">- Auntie Eugenia's .</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="Christening packaging.jpeg" alt="User Review 2">
+                    <div class="gallery-overlay">
+                        <div class="review-text">
+                            <p>" Christening packaging"</p>
+                            <p class="reviewer">- Griddle Kitchen.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="Our chop box of assorted finger foods....jpeg" alt="User Review 3">
+                    <div class="gallery-overlay">
+                        <div class="review-text">
+                            <p>"Our chop box of assorted finger foods..."</p>
+                            <p class="reviewer">- Dr Arnold Quartey.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="surprising someone on their birthday... .jpeg" alt="User Review 4">
+                    <div class="gallery-overlay">
+                        <div class="review-text">
+                            <p>"surprising someone on their birthday... "</p>
+                            <p class="reviewer">-  Griddle Kitchen.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="small chops box.jpeg" alt="User Review 5">
+                    <div class="gallery-overlay">
+                        <div class="review-text">
+                            <p>"small chops box"</p>
+                            <p class="reviewer">- Griddle Kitchen </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="Birthday lunch Basket... .jpeg" alt="User Review 6">
+                    <div class="gallery-overlay">
+                        <div class="review-text">
+                            <p>"Birthday lunch Basket..."</p>
+                            <p class="reviewer">- Griddle Kitchen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="reservation">
+        <video class="reservation-bg-video" autoplay muted loop playsinline>
+            <source src="https://videos.pexels.com/video-files/3571560/3571560-sd_640_360_30fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="reservation-overlay"></div>
+        <div class="container">
+            <h2>Make a Reservation</h2>
+            <div class="reservation-form-wrapper">
+                <form class="reservation-form" id="reservationForm" onsubmit="handleReservation(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests *</label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Select guests</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7">7 Guests</option>
+                                <option value="8">8 Guests</option>
+                                 <option value="10">10+ Guests</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Reservation Date *</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Reservation Time *</label>
+                            <input type="time" id="time" name="time" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="occasion">Occasion (Optional)</label>
+                        <select id="occasion" name="occasion">
+                            <option value="">Select occasion</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="business">Business Meeting</option>
+                            <option value="family">Family Gathering</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="notes">Special Requests</label>
+                        <textarea id="notes" name="notes" placeholder="Any dietary restrictions or special requests?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Confirm Reservation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item contact-map-item">
+                    <h3>📍 Location</h3>
+                    <div class="map-container-small">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.4564271434417!2d-0.17595292346819353!3d5.603833693706834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9a1b7b7b7b7b7%3A0x1234567890abcdef!2s10th%20Ave%2C%20Accra!5e0!3m2!1sen!2sgh!4v1702000000000\" width="100%" height="200" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <p style="margin-top: 1rem;"><strong>Griddle Kitchen</strong></p>
+                    <p>Opposite Obuoba Gardens</p>
+                    <p>10th Ave, Accra</p>
+                    <a href="https://www.google.com/maps/search/Griddle+Kitchen+10th+Ave+Accra" target="_blank" rel="noopener noreferrer" class="btn btn-small" style="display: inline-block; margin-top: 1rem;">Get Directions</a>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
+                    <p><a href="tel:+233245681858">+233 245 681 858</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>✉️ Email</h3>
+                    <p><a href="mailto:info@griddlekitchen.com">info@griddlekitchen.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>🕒 Hours</h3>
+                    <p>Mon - Thu: 11:00 AM - 11:00 PM</p>
+                    <p>Fri - Sun: 11:00 AM - 12:00 AM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Griddle Kitchen. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" title="Facebook">f</a>
+                <a href="https://www.instagram.com/griddlekitchen?igsh=MXIycmtjYnMwOWRlZg==" title="Instagram">📷</a>
+                <a href="https://x.com/griddlekitchen?s=21" title="Twitter">𝕏</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
